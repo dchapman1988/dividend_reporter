@@ -1,0 +1,22 @@
+%html
+  %head
+    %title 
+      = "Dividend Reporter"
+    = stylesheet_link_tag    "application"
+    = csrf_meta_tags
+  %body
+    #wrapper
+      #login_bar
+        %p
+          - if user_signed_in?
+            = render :partial => "shared/login_bar_logged_in"
+          - else
+            = render :partial => "shared/login_bar_logged_out"
+      #content
+        %p
+          .notice
+            = notice
+          .alert
+            = alert
+        %br/
+        = yield

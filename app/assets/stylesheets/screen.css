@@ -1,0 +1,102 @@
+html {
+}
+
+body {
+}
+
+#wrapper {
+  width:960px;
+  margin: 20px auto;
+  border:1px solid #ccc;
+}
+
+h1 {
+  font-size:1.4em;
+}
+
+h1 a {
+  text-decoration:none;
+  color:#daf1f9;
+}
+
+#topbar {
+  background:#406e8f;
+  padding: 5px;
+  border:1px solid #2f5571;
+  padding: 8px 0 5px 5px;
+}
+
+#topbar .top_menu {
+  text-align:right;
+  padding: 0 10px 0 0;
+}
+
+#topbar .top_menu a {
+  padding: 0 0 0 10px;
+  color:#daf1f9;
+  text-decoration:underline;
+}
+
+#topbar .top_menu a:hover {
+  text-decoration: none;
+}
+
+#content table {
+  width:100%;
+}
+
+#content table th {
+  border-right:1px solid #ccc;
+  padding: 4px;
+  font-weight:bold;
+  background:#00929f;
+  color:#000;
+}
+
+#content table .last {
+  border:none;
+}
+
+#content table tr {
+  border-top:1px solid #ccc;
+}
+
+#content table td a {
+  color:#2b516c;
+}
+
+#content table tr.even {
+  background:#fff;
+}
+#content table tr.odd {
+  background:#daf1f9;
+}
+
+
+#content table td {
+  border-right:1px solid #ccc;
+  padding: 4px 3px 4px 3px;
+}
+
+#login_field {
+  padding: 10px;
+}
+
+#login_field h2 {
+  font-size:1.4em;
+  text-decoration:underline;
+  margin: 0 0 10px 0;
+}
+
+#login_field p {
+  margin: 0 0 10px 0;
+}
+
+#login_field p label {
+  float:left;
+  width:110px;
+}
+
+#login_field a {
+  color:#406e8f;
+}
