@@ -11,11 +11,11 @@ class User < ActiveRecord::Base
   has_many :stocks, :through => :user_stock_watches
 
   def unwatch(stock)
-    watched_stock = self.user_stock_watches.find_by_stock_id(stock)
+    watched_stock = user_stock_watches.find_by_stock_id(stock)
     watched_stock.destroy
   end
 
   def watch(stock)
-    self.user_stock_watches.create(:stock => stock)
+    user_stock_watches.create(:stock => stock)
   end
 end

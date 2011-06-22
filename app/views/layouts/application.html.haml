@@ -14,10 +14,7 @@
           - else
             = render :partial => "shared/login_bar_logged_out"
       #content
-        %p
-          .notice
-            = notice
-          .alert
-            = alert
+        - flash.each do |key, value|
+          = content_tag(:div, value, :class => "flash #{key}")
         %br/
         = yield

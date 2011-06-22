@@ -13,19 +13,4 @@ class AdminController < ApplicationController
       redirect_to admin_panel_path, :notice => "Update failed!"
     end
   end
-
-  def remove_stock
-    if Stock.find(params[:id]).destroy
-      redirect_to admin_panel_path, :notice => "Stock successfully removed!"
-    else
-      redirect_to admin_panel_path, :notice => "Failed to remove stock!"
-    end
-  end
-
-  def add_stock
-    @symbol_list = params[:symbol].split("\r\n")
-    y_integrator = YahooFinanceIntegrator.new
-    y_integrator.add_quote_for_new_stock @symbol_list
-    redirect_to admin_panel_path
-  end
 end

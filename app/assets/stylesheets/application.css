@@ -11,12 +11,16 @@ html, body,td,th
   font-size: 12px;
   color: #330000;
 }
+a:link {color:#0033ff;}      /* unvisited link */
+a:visited {color:#0033ff;}  /* visited link */
+a:hover {color:#0033ff;}  /* mouse over link */
+a:active {color:#0033ff;}  /* selected link */
 #wrapper {
   margin: 0 auto;
-  width 922px;
+  width 100%;
 }
 #login_bar {
-  width: 900px;
+  width: 100%;
   float: left;
   padding: 10px;
   height: 20px;
@@ -26,6 +30,25 @@ html, body,td,th
 {
   margin: 5px 5px 5px 5px;
   padding: 10px;
-  width: 900px;
+  width: 960px;
   float: left;
 }
+.user_link a:link {color:#cc0000;}    /* unvisited link */
+.user_link a:visited {color:#cc0000;} /* visited link */
+.user_link a:hover {color:#cc0000;}   /* mouse over link */
+.user_link a:active {color:#cc0000;}  /* selected link */
+.notice {
+  color:#ffcc00;
+  font-size:1.2em;
+  padding: 5px;
+  text-align: center;
+}
+.error, .alert, .notice, .info {padding:0.8em;margin-bottom:1em;border:2px solid #ddd;}
+.error, .alert {background:#fbe3e4;color:#8a1f11;border-color:#fbc2c4;}
+.notice {background:#e6efc2;color:#264409;border-color:#c6d880;}
+.info {background:#d5edf8;color:#205791;border-color:#92cae4;}
+.error a, .alert a {color:#8a1f11;}
+.notice a {color:#514721;}
+.success a {color:#264409;}
+.info a {color:#205791;}
+

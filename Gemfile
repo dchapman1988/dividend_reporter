@@ -8,6 +8,7 @@ gem 'haml-rails'
 gem 'yahoofinance', '1.2.2'
 gem 'capybara'
 gem 'launchy'
+gem 'ruby-debug19', '~>0.11.6', :require => 'ruby-debug'
 
 group :development do
   gem 'rspec-rails', '~>2.6.1'

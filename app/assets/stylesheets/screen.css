@@ -19,27 +19,6 @@ h1 a {
   color:#daf1f9;
 }
 
-#topbar {
-  background:#406e8f;
-  padding: 5px;
-  border:1px solid #2f5571;
-  padding: 8px 0 5px 5px;
-}
-
-#topbar .top_menu {
-  text-align:right;
-  padding: 0 10px 0 0;
-}
-
-#topbar .top_menu a {
-  padding: 0 0 0 10px;
-  color:#daf1f9;
-  text-decoration:underline;
-}
-
-#topbar .top_menu a:hover {
-  text-decoration: none;
-}
 
 #content table {
   width:100%;

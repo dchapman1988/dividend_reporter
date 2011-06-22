@@ -2,8 +2,8 @@ class UsersController < ApplicationController
 
   def show
     if current_user
-      unless current_user.stocks?
-        redirect_to root_path, :notice => "You need to add some stocks first."
+      unless current_user.user_stock_watches != nil
+        redirect_to root_path, :error => "You need to add some stocks first."
       end
       @stocks = current_user.stocks
     else
@@ -16,9 +16,9 @@ class UsersController < ApplicationController
       @stock = Stock.find(params[:id])
       if current_user
         current_user.unwatch @stock
-        redirect_to user_path(current_user), :notice => "Stock removed!"
+        redirect_to user_path(current_user), :info => "Stock removed!"
       else
-        redirect_to user_path(current_user), :notice => "You are not watching this stock..."
+        redirect_to user_path(current_user), :info => "You are not watching this stock..."
       end
     end
   end

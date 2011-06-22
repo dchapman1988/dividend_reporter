@@ -8,6 +8,10 @@ DividendReporter::Application.routes.draw do
     get "sign_out", :to => "devise/sessions#destroy"
   end
 
+  namespace :admin do
+    resources :stocks
+  end
+
   resources :users
   resources :stocks
 
@@ -18,7 +22,7 @@ DividendReporter::Application.routes.draw do
   match "admin/panel",            :to => "admin#index"
   match "admin/update_quotes",    :to => "admin#update_quotes"
   match "admin/add_stock",        :to => "admin#add_stock"
-  match "admin/remove_stock",     :to => "admin#remove_stock"
+  match "admin/remove_stock",     :to => "admin/stocks#destroy"
 
   root :to => "stocks#index"
 
