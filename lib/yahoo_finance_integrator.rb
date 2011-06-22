@@ -1,8 +1,8 @@
 class YahooFinanceIntegrator
   attr_accessor :stocks, :quotes
   def get_quotes(array)
-    y_ext_hsh = YahooFinance.get_extended_quotes(stock_array)
-    y_std_hsh = YahooFinance.get_standard_quotes(stock_array)
+    y_ext_hsh = YahooFinance.get_extended_quotes(array)
+    y_std_hsh = YahooFinance.get_standard_quotes(array)
     y_ext_hsh.keys.each do |symbol|
       stock = Stock.find_by_symbol(symbol)
       quote = Quote.new
