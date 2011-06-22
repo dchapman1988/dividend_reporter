@@ -1,6 +1,4 @@
-%hr/
 %h2 Admin Control Panel
-%hr/
 %br/
 %span{ :style => "float:left;" }
   %h3 Add stocks
@@ -9,7 +7,7 @@
   = form_tag(admin_add_stock_path, :method => "get") do
     = label_tag(:symbol, "Symbols")
     %br/
-    = text_area_tag(:symbol, nil, :cols => 30, :rows => 5)
+    = text_area_tag(:symbol, nil, :cols => 40, :rows => 10)
     %br/
     = "Seperate with commas"
     %br/
@@ -26,7 +24,7 @@
         %th Ex Date
         %th Pay Date
         %th Yield
-        %th Dividend / share
+        %th.last Dividend / share
     %tbody
       - @stocks.each do |s|
         %tr{ :class => cycle("odd", "even") }
@@ -44,6 +42,6 @@
             = s.quotes.last.dividend_pay_date
           %td
             = s.quotes.last.dividend_yield
-          %td
+          %td.last
             = s.quotes.last.dividends_per_share
 

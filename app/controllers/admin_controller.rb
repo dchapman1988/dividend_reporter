@@ -1,3 +1,4 @@
+require File.expand_path(File.join(Rails.root, 'lib', 'yahoo_finance_integrator.rb'))
 class AdminController < ApplicationController
 
   def index
@@ -22,9 +23,9 @@ class AdminController < ApplicationController
   end
 
   def add_stock
-    @symbol = params[:symbol]
+    @symbol_list = params[:symbol].split("\r\n")
     y_integrator = YahooFinanceIntegrator.new
-    y_integrator.add_quote_for_new_stock @symbol
+    y_integrator.add_quote_for_new_stock @symbol_list
     redirect_to admin_panel_path
   end
 end
