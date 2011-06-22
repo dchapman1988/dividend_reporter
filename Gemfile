@@ -5,6 +5,9 @@ gem 'mysql2'
 gem 'database_cleaner'
 gem 'haml', '~>3.1.2'
 gem 'haml-rails'
+gem 'yahoofinance', '1.2.2'
+gem 'capybara'
+gem 'launchy'
 
 group :development do
   gem 'rspec-rails', '~>2.6.1'

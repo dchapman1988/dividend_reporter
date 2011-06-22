@@ -3,7 +3,19 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  scope :admin, where(:admin => true)
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
+  has_many :user_stock_watches
+  has_many :stocks, :through => :user_stock_watches
+
+  def unwatch(stock)
+    watched_stock = self.user_stock_watches.find_by_stock_id(stock)
+    watched_stock.destroy
+  end
+
+  def watch(stock)
+    self.user_stock_watches.create(:stock => stock)
+  end
 end

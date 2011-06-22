@@ -1,0 +1,30 @@
+%table.user_stock_watches
+  %thead
+    %tr
+      %th Remove
+      %th Company Name
+      %th Symbol
+      %th Last Price
+      %th Ex Date
+      %th Pay Date
+      %th Yield
+      %th.last Dividend / Share
+  %tbody
+    - @stocks.each do |s|
+      %tr{ :class => cycle("odd", "even") }
+        %td
+          = link_to 'remove', user_remove_watch_path(s)
+        %td
+          = link_to s.company_name, stock_path(s)
+        %td
+          = s.symbol
+        %td
+          = s.quotes.last.last_price
+        %td
+          = s.quotes.last.ex_dividend_date
+        %td
+          = s.quotes.last.dividend_pay_date
+        %td
+          = s.quotes.last.dividend_yield
+        %td.last
+          = s.quotes.last.dividends_per_share

@@ -8,10 +8,19 @@ DividendReporter::Application.routes.draw do
     get "sign_out", :to => "devise/sessions#destroy"
   end
 
+  resources :users
+  resources :stocks
+
+  match "/help",                  :to => "pages#help"
+  match "users/:id/",             :to => "users#show"
+  match "users/remove_watch/:id", :to => "users#remove_watch"
+  match "stocks/:id/watch",       :to => "stocks#watch"
+  match "admin/panel",            :to => "admin#index"
+  match "admin/update_quotes",    :to => "admin#update_quotes"
+  match "admin/add_stock",        :to => "admin#add_stock"
+  match "admin/remove_stock",     :to => "admin#remove_stock"
+
   root :to => "stocks#index"
-  resource :users
-  resource :stocks
-  get 'pages/help' => "pages#help", :as => 'help'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

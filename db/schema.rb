@@ -10,27 +10,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110617150927) do
+ActiveRecord::Schema.define(:version => 20110621174634) do
 
-  create_table "admins", :force => true do |t|
-    t.string   "email",                                 :default => "", :null => false
-    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                         :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+  create_table "quotes", :force => true do |t|
+    t.float    "last_price"
+    t.float    "dividend_yield"
+    t.float    "dividends_per_share"
+    t.string   "ex_dividend_date"
+    t.string   "dividend_pay_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "stock_id"
   end
 
-  add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
-  add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
-
   create_table "stocks", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "symbol"
+    t.string   "company_name"
+  end
+
+  create_table "user_stock_watches", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "stock_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -48,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20110617150927) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

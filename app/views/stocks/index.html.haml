@@ -1,10 +1,54 @@
+%hr/
+%h2 Dividend Reporter
+%hr/
+%br/
+%h3 Active Stocks Master List
+
 %table.stocks
   %thead
     %tr
+      %th Watch
       %th Symbol
       %th Company Name
       %th Price
       %th Dividend/Share
       %th Yield
       %th ExDate
-      %th Pay Date
+      %th.last Pay Date
+  %tbody
+    - @stocks.each do |s|
+      %tr{ :class => cycle("odd","even") }
+        - if current_user && current_user.user_stock_watches.find_by_stock_id(s.id)
+          %td
+            = link_to 'unwatch', user_remove_watch_path(s)
+          %td
+            = s.symbol
+          %td
+            = link_to s.company_name, stock_path(s)
+          %td
+            = s.quotes.last.last_price
+          %td
+            = s.quotes.last.dividends_per_share
+          %td
+            = s.quotes.last.dividend_yield
+          %td
+            = s.quotes.last.ex_dividend_date
+          %td.last
+            = s.quotes.last.dividend_pay_date
+        - else
+          %td
+            = link_to 'watch'
+          %td
+            = s.symbol
+          %td
+            = link_to s.company_name, stock_path(s)
+          %td
+            = s.quotes.last.last_price
+          %td
+            = s.quotes.last.dividends_per_share
+          %td
+            = s.quotes.last.dividend_yield
+          %td
+            = s.quotes.last.ex_dividend_date
+          %td.last
+            = s.quotes.last.dividend_pay_date

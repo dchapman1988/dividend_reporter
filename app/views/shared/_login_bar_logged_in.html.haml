@@ -1,5 +1,9 @@
 %span{:style => "float:left;"}
   = link_to "Dividend Reporter", root_path
+
 %span{:style => "float:right;"}
+  = link_to current_user.email, current_user
+  - if current_user.admin?
+    = link_to "Admin Panel", admin_panel_path
   = link_to "Logout", sign_out_path
-  = link_to "Help", "pages/help"
+  = link_to "Help", help_path

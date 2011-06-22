@@ -1,0 +1,49 @@
+%hr/
+%h2 Admin Control Panel
+%hr/
+%br/
+%span{ :style => "float:left;" }
+  %h3 Add stocks
+  = link_to 'Update all quotes', admin_update_quotes_path
+  %br/
+  = form_tag(admin_add_stock_path, :method => "get") do
+    = label_tag(:symbol, "Symbols")
+    %br/
+    = text_area_tag(:symbol, nil, :cols => 30, :rows => 5)
+    %br/
+    = "Seperate with commas"
+    %br/
+    = submit_tag("Add Stock")
+%span{ :style => "float:right;" }
+  %h3 Remove stocks
+  %table.stocks
+    %thead
+      %tr
+        %th Remove
+        %th Company Name
+        %th Symbol
+        %th Last Price
+        %th Ex Date
+        %th Pay Date
+        %th Yield
+        %th Dividend / share
+    %tbody
+      - @stocks.each do |s|
+        %tr{ :class => cycle("odd", "even") }
+          %td
+            = link_to 'remove', admin_remove_stock_path(s)
+          %td
+            = link_to s.company_name, stock_path(s)
+          %td
+            = s.symbol
+          %td
+            = s.quotes.last.last_price
+          %td
+            = s.quotes.last.ex_dividend_date
+          %td
+            = s.quotes.last.dividend_pay_date
+          %td
+            = s.quotes.last.dividend_yield
+          %td
+            = s.quotes.last.dividends_per_share
+

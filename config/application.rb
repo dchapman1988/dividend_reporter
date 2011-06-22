@@ -45,3 +45,4 @@ module DividendReporter
     config.assets.enabled = true
   end
 end
+require 'devise'

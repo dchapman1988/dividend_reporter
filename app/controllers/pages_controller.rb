@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def help
-    @title = "Help"
+    render :help
   end
 
 end
