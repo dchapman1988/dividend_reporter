@@ -27,9 +27,9 @@ class User::StockWatchesController < UsersController
 
   def update_multiple
     if params[:commit] == "Watch selected" && !params[:selected].nil?
-      number_of_updated_quotes = pluralize(params[:selected].count, "stock")
+      number_of_updated_stocks = pluralize(params[:selected].count, "stock")
       watch_multiple
-      flash[:notice] = "Added #{number_of_updated_quotes}."
+      flash[:notice] = "Added #{number_of_updated_stocks} to your watch list."
       redirect_to root_path
     elsif params[:commit] == "Unwatch selected" && !params[:selected].nil?
       number_of_removed_stocks = pluralize(params[:selected].count, "stock")
