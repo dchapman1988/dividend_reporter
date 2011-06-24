@@ -9,7 +9,19 @@ DividendReporter::Application.routes.draw do
   end
 
   namespace :admin do
-    resources :stocks
+    resources :stocks do
+      collection do
+        post :update_multiple
+      end
+    end
+  end
+
+  namespace :user do
+    resources :stock_watches do
+      collection do
+        post :update_multiple
+      end
+    end
   end
 
   resources :users

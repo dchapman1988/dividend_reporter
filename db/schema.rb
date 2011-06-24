@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110621174634) do
+ActiveRecord::Schema.define(:version => 20110624024508) do
 
   create_table "quotes", :force => true do |t|
     t.float    "last_price"
@@ -23,18 +23,18 @@ ActiveRecord::Schema.define(:version => 20110621174634) do
     t.integer  "stock_id"
   end
 
+  create_table "stock_watches", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "stock_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "stocks", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "symbol"
     t.string   "company_name"
-  end
-
-  create_table "user_stock_watches", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "stock_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

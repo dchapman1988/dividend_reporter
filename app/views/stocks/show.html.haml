@@ -1,2 +1,34 @@
 - stock = @stock
-%h2= stock.company_name
+%h2= stock.try(:company_name)
+%br
+%br
+%div{:style => "float: left; width: 100px;"}
+  %b Stock Symbol:
+%div{:style => "float: left;"}
+  = stock.try(:symbol)
+%div{:style => "clear: both;"}
+%div{:style => "float: left; width: 100px;"}
+  %b Last Trade:
+%div{:style => "float: left;"}
+  = stock.quotes.last.try(:last_price)
+%div{:style => "clear: both;"}
+%div{:style => "float: left; width: 100px;"}
+  %b ExDate:
+%div{:style => "float: left;"}
+  = stock.quotes.last.try(:ex_dividend_date)
+%div{:style => "clear: both;"}
+%div{:style => "float: left; width: 100px;"}
+  %b Pay Date:
+%div{:style => "float: left;"}
+  = stock.quotes.last.try(:dividend_pay_date)
+%div{:style => "clear: both;"}
+%div{:style => "float: left; width: 100px;"}
+  %b Dividend Yield:
+%div{:style => "float: left;"}
+  = stock.quotes.last.try(:dividend_yield)
+%div{:style => "clear: both;"}
+%div{:style => "float: left; width: 100px;"}
+  %b Dividends/Share
+%div{:style => "float: left;"}
+  = stock.quotes.last.try(:dividends_per_share)
+%div{:style => "clear: both;"}

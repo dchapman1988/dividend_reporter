@@ -37,13 +37,15 @@ a:active {color:#0033ff;}  /* selected link */
 .user_link a:visited {color:#cc0000;} /* visited link */
 .user_link a:hover {color:#cc0000;}   /* mouse over link */
 .user_link a:active {color:#cc0000;}  /* selected link */
+/*
 .notice {
   color:#ffcc00;
   font-size:1.2em;
   padding: 5px;
   text-align: center;
 }
-.error, .alert, .notice, .info {padding:0.8em;margin-bottom:1em;border:2px solid #ddd;}
+  */
+.error, .alert, .notice, .info {padding:0.8em;margin-bottom:1em;border:2px solid #ddd;font-size:1.2em;text-align: center;padding: 5px;}
 .error, .alert {background:#fbe3e4;color:#8a1f11;border-color:#fbc2c4;}
 .notice {background:#e6efc2;color:#264409;border-color:#c6d880;}
 .info {background:#d5edf8;color:#205791;border-color:#92cae4;}

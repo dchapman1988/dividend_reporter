@@ -6,9 +6,8 @@ gem 'database_cleaner'
 gem 'haml', '~>3.1.2'
 gem 'haml-rails'
 gem 'yahoofinance', '1.2.2'
-gem 'capybara'
-gem 'launchy'
 gem 'ruby-debug19', '~>0.11.6', :require => 'ruby-debug'
+gem "will_paginate", :git => "https://github.com/p7r/will_paginate.git", :branch => "rails3"
 
 group :development do
   gem 'rspec-rails', '~>2.6.1'
@@ -19,6 +18,8 @@ end
 group :test do
   gem 'rspec'
   gem 'cucumber'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 
