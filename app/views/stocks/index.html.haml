@@ -5,15 +5,18 @@
 %br/
 .clear
 = form_tag update_multiple_user_stock_watches_path do 
-  = submit_tag 'Watch selected'
-  = submit_tag 'Unwatch selected', :confirm => "You sure?"
+  - if user_signed_in?
+    = submit_tag 'Watch selected'
+    = submit_tag 'Unwatch selected', :confirm => "You sure?"
   %br/
   %br/
-  = link_to_function 'Select all', "$('.stocks .checkable').trigger('click');"
+  - if user_signed_in?
+    = link_to_function 'Select all', "$('.stocks .checkable').trigger('click');"
   %table.stocks
     %thead
       %tr
-        %th Remove
+        - if user_signed_in?
+          %th Remove
         %th Company Name
         %th Symbol
         %th Last Price
@@ -24,8 +27,9 @@
     %tbody
       - @stocks.each do |s|
         %tr{ :class => cycle("odd", "even") }
-          %td
-            = check_box_tag("selected[#{s.id}]", s.id, checked = false, :class => "checkable")
+          - if user_signed_in?
+            %td
+              = check_box_tag("selected[#{s.id}]", s.id, checked = false, :class => "checkable")
           %td
             = link_to s.try(:company_name), stock_path(s)
           %td
