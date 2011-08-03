@@ -41,7 +41,7 @@
             %td
               = link_to s.try(:company_name), stock_path(s)
             %td
-              = s.try(:symbol)
+              = link_to s.try(:symbol), "http://www.google.com/finance?q=#{s.try(:symbol)}", :target => "_blank"
             %td
               = s.quotes.last.try(:last_price)
             %td
