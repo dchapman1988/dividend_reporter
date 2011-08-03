@@ -20,7 +20,7 @@ a:active {color:#0033ff;}  /* selected link */
   width 100%;
 }
 #login_bar {
-  width: 100%;
+  width: 97%;
   float: left;
   padding: 10px;
   height: 20px;
@@ -30,7 +30,7 @@ a:active {color:#0033ff;}  /* selected link */
 {
   margin: 5px 5px 5px 5px;
   padding: 10px;
-  width: 960px;
+  width: 95%;
   float: left;
 }
 .user_link a:link {color:#cc0000;}    /* unvisited link */
@@ -51,6 +51,5 @@ a:active {color:#0033ff;}  /* selected link */
 .info {background:#d5edf8;color:#205791;border-color:#92cae4;}
 .error a, .alert a {color:#8a1f11;}
 .notice a {color:#514721;}
-.success a {color:#264409;}
 .info a {color:#205791;}
 

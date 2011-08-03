@@ -32,3 +32,8 @@
 %div{:style => "float: left;"}
   = stock.quotes.last.try(:dividends_per_share)
 %div{:style => "clear: both;"}
+%div{:style => "float: left; width: 100px;"}
+  %b Google Finance:
+%div{:style => "float: left"}
+  = link_to "http://www.google.com/finance?q=#{stock.symbol}", "http://www.google.com/finance?q=#{stock.symbol}"
+%div{:style => "clear: both;"}

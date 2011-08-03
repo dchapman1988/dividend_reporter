@@ -66,6 +66,11 @@ protected
   end
 
   def process_updates
-    YahooFinanceIntegrator.new( params[:selected].keys ) if params[:selected].any?
+    array = params[:selected] if params[:selected].any?
+    array.each do |id|
+      symbols = []
+      symbols << Stock.find(id[1].to_i).symbol
+      YahooFinanceIntegrator.new(symbols)
+    end
   end
 end

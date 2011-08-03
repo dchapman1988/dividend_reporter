@@ -3,7 +3,12 @@ class StocksController < ApplicationController
   end
 
   def index
-    @stocks = Stock.all
+    if user_signed_in?
+      @stocks = Stock.all
+    else
+      flash.now[:info] = "TIP:  Login to watch and view more information on the stocks below."
+      @stocks = Stock.all
+    end
   end
 
 
@@ -11,8 +16,8 @@ class StocksController < ApplicationController
     if user_signed_in?
       @stock = Stock.find(params[:id])
     else
-      redirect_to new_user_session_path
       flash[:info] = "Sign in to view a company's stock information."
+      redirect_to new_user_session_path
     end
   end
 

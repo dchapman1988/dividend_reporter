@@ -21,9 +21,10 @@
         %th Symbol
         %th Last Price
         %th Ex Date
-        %th Pay Date
-        %th Yield
-        %th.last Dividend / share
+        - if user_signed_in?
+          %th Pay Date
+          %th Yield
+          %th.last Dividend / share
     %tbody
       - @stocks.each do |s|
         %tr{ :class => cycle("odd", "even") }
@@ -33,14 +34,15 @@
           %td
             = link_to s.try(:company_name), stock_path(s)
           %td
-            = s.try(:symbol)
+            = link_to s.try(:symbol), "http://www.google.com/finance?q=#{s.try(:symbol)}", :target => "_blank"
           %td
             = s.quotes.last.try(:last_price)
           %td
             = s.quotes.last.try(:ex_dividend_date)
-          %td
-            = s.quotes.last.try(:dividend_pay_date)
-          %td
-            = s.quotes.last.try(:dividend_yield)
-          %td.last
-            = s.quotes.last.try(:dividends_per_share)
+          - if user_signed_in?
+            %td
+              = s.quotes.last.try(:dividend_pay_date)
+            %td
+              = s.quotes.last.try(:dividend_yield)
+            %td.last
+              = s.quotes.last.try(:dividends_per_share)
