@@ -1,4 +1,4 @@
-# David's Versions of Dividend Reporter
+# David's Version of Dividend Reporter
 
 This is the dividend reporting application for
 [*Isotope 11 Inc.*](http://www.isotope11.com/)
