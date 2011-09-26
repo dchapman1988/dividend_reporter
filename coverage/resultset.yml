@@ -1,0 +1,333 @@
+--- 
+RSpec: 
+  :original_result: 
+    /home/david/work/isotope11/dividend_reporter/lib/yahoo_finance_integrator.rb: 
+    - 1
+    - 1
+    - 
+    - 1
+    - 0
+    - 0
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 1
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 1
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 1
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/models/admin.rb: 
+    - 1
+    - 
+    - 
+    - 1
+    - 
+    - 
+    - 
+    - 1
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/models/user.rb: 
+    - 1
+    - 
+    - 
+    - 1
+    - 
+    - 1
+    - 
+    - 
+    - 1
+    - 1
+    - 1
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/controllers/application_controller.rb: 
+    - 1
+    - 1
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/helpers/application_helper.rb: 
+    - 1
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/helpers/pages_helper.rb: 
+    - 1
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/helpers/quotes_helper.rb: 
+    - 1
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/helpers/sessions_helper.rb: 
+    - 1
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/helpers/stocks_helper.rb: 
+    - 1
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/helpers/users_helper.rb: 
+    - 1
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/controllers/admin/stocks_controller.rb: 
+    - 1
+    - 
+    - 1
+    - 
+    - 
+    - 
+    - 1
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 1
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 1
+    - 
+    - 
+    - 
+    - 1
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 1
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 0
+    - 
+    - 
+    - 1
+    - 0
+    - 
+    - 
+    - 1
+    - 
+    - 1
+    - 0
+    - 
+    - 
+    - 1
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/controllers/admin_controller.rb: 
+    - 1
+    - 
+    - 1
+    - 0
+    - 0
+    - 
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/models/stock.rb: 
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/controllers/pages_controller.rb: 
+    - 1
+    - 1
+    - 1
+    - 
+    - 
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/controllers/quotes_controller.rb: 
+    - 1
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/models/quote.rb: 
+    - 1
+    - 1
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/controllers/sessions_controller.rb: 
+    - 1
+    - 
+    - 1
+    - 
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/controllers/stock_watches_controller.rb: 
+    - 1
+    - 
+    - 
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/models/stock_watch.rb: 
+    - 1
+    - 1
+    - 1
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/controllers/stocks_controller.rb: 
+    - 1
+    - 1
+    - 
+    - 
+    - 1
+    - 0
+    - 0
+    - 
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - 1
+    - 0
+    - 0
+    - 
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 1
+    - 
+    - 
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/controllers/user/stock_watches_controller.rb: 
+    - 1
+    - 
+    - 1
+    - 
+    - 
+    - 1
+    - 0
+    - 
+    - 
+    - 1
+    - 0
+    - 0
+    - 
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 1
+    - 0
+    - 0
+    - 
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 1
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    - 1
+    - 0
+    - 
+    - 
+    - 1
+    - 
+    - 1
+    - 0
+    - 
+    - 
+    - 1
+    - 0
+    - 0
+    - 
+    - 
+    - 
+    /home/david/work/isotope11/dividend_reporter/app/controllers/users_controller.rb: 
+    - 1
+    - 
+    - 1
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 
+    - 0
+    - 
+    - 
+    - 
+  :created_at: 2011-08-04 13:22:23.285167 -00:00

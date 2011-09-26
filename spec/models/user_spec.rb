@@ -9,7 +9,6 @@ describe User do
     }
   end
 
-  it { should have_many(:stock_watches) }
   it { should have_many(:stocks)        }
 
   it "should create a new instance given valid attributes" do

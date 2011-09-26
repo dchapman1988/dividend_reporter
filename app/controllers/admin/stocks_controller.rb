@@ -1,6 +1,7 @@
 class Admin::StocksController < AdminController
 
   def create
+    # Yahoo finance takes care of this one
   end
 
   def destroy
@@ -73,4 +74,5 @@ protected
       YahooFinanceIntegrator.new(symbols)
     end
   end
+
 end
