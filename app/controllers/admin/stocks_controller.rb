@@ -22,11 +22,11 @@ class Admin::StocksController < AdminController
     elsif params[:commit] == "Remove selected" && !params[:selected].nil?
       number_of_removed_stocks = pluralize(params[:selected].count, "stock")
       remove_multiple
-      redirect_to admin_panel_path
       flash[:info] = "Removed #{number_of_removed_stocks}."
-    else
       redirect_to admin_panel_path
+    else
       flash[:error] = "Select something first."
+      redirect_to admin_panel_path
     end
   end
 
@@ -41,8 +41,8 @@ class Admin::StocksController < AdminController
       number_of_added_stocks = pluralize(@symbol_list.count, 'Stock')
       redirect_to admin_panel_path, :notice => "Added #{number_of_added_stocks}"
     else
+      flash[:error] = "Didn\'t find any symbols."
       redirect_to admin_panel_path
-      flash[:error] = "Didn\'t find any symbols. Was the text area empty? ;-)"
     end
   end
 

@@ -19,6 +19,9 @@ a:active {color:#0033ff;}  /* selected link */
   margin: 0 auto;
   width 100%;
 }
+.pagination {
+  float: right;
+}
 #login_bar {
   width: 97%;
   float: left;

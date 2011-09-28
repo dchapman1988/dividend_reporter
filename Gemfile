@@ -1,17 +1,19 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc5'
+gem 'rails', '3.1.0'
 gem 'mysql2', '~> 0.3.6'
 
-gem 'activesupport', '~> 3.1.0.rc5'
+gem 'activesupport', '~> 3.1.0'
 gem 'haml', '~>3.1.2'
 gem 'haml-rails', '~> 0.3.4'
 gem 'sass', '~> 3.1.2'
 gem 'yahoofinance', '1.2.2'
 gem 'jquery-rails', '~> 1.0.12'
-gem 'sass-rails', "~> 3.1.0.rc"
+gem 'sass-rails', "~> 3.1.0"
 gem 'coffee-script', '~> 2.2.0'
 gem 'uglifier', '~> 1.0.0'
+gem "whenever", "~> 0.7.0"
+gem "will_paginate", "~> 3.0.2"
 
 group :development, :test do
   gem 'ruby-debug19', '~>0.11.6', :require => 'ruby-debug'

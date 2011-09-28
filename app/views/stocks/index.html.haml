@@ -12,6 +12,7 @@
   %br/
   - if user_signed_in?
     = link_to_function 'Select all', "$('.stocks .checkable').trigger('click');"
+  = will_paginate @stocks
   %table.stocks
     %thead
       %tr

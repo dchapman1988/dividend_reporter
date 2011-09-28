@@ -22,6 +22,7 @@
     %br/
     %br/
     = link_to_function 'Select all', "$('.stocks .checkable').trigger('click');"
+    = will_paginate @stocks
     %table.stocks
       %thead
         %tr
@@ -43,7 +44,7 @@
             %td
               = link_to s.try(:symbol), "http://www.google.com/finance?q=#{s.try(:symbol)}", :target => "_blank"
             %td
-              = s.quotes.last.try(:last_price)
+              = BigDecimal(s.quotes.last.try(:last_price).to_s)
             %td
               = s.quotes.last.try(:ex_dividend_date)
             %td

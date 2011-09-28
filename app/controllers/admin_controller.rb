@@ -1,11 +1,8 @@
 class AdminController < ApplicationController
+  before_filter :authenticate_user!
+  before_filter :authenticate_admin!
 
   def index
-    if current_user.admin
-      @stocks = Stock.all
-    else
-      redirect_to root_path
-      flash[:error] = "You must be an administrator to access this page!"
-    end
+    @stocks = Stock.paginate(:page => params[:page], :per_page => 20)
   end
 end
