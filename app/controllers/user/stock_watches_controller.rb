@@ -9,7 +9,8 @@ class User::StockWatchesController < UsersController
 
   def create
     if @stock_watch.save
-      redirect_to root_path, :notice => "Stock watch created!"
+      flash[:notice] = "Stock watch created!"
+      redirect_to root_path
     else
       flash[:error] = "Failed to watch the stock!"
       redirect_to user_path(current_user)
@@ -18,7 +19,8 @@ class User::StockWatchesController < UsersController
 
   def destroy
     if @user.stock_watch.destroy
-      redirect_to root_path, :notice => "Stock watch removed!"
+      flash[:info] = "Stock watch removed!"
+      redirect_to root_path
     else
       flash[:error] = "Failed to remove stock watch!"
       redirect_to user_path(current_user)
@@ -37,17 +39,12 @@ class User::StockWatchesController < UsersController
       flash[:alert] = "Removed #{number_of_removed_stocks}."
       redirect_to user_path(current_user)
     else
-      redirect_to user_path(current_user)
       flash[:info] = "Select something first."
+      redirect_to user_path(current_user)
     end
   end
 
-  def pluralize(count, singular, plural = nil)
-    "#{count || 0} " + ((count == 1 || count =~ /^1(\.0+)?$/) ? singular : (plural || singular.pluralize))
-  end
-
-protected
-
+  protected
   def unwatch_multiple
     StockWatch.delete_all(["stock_watches.stock_id IN (?) AND stock_watches.user_id = ?", params[:selected].keys, current_user.id]) if params[:selected].any?
   end

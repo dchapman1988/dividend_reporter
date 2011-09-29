@@ -1,4 +1,4 @@
-task :update_stocks => :development do
+task :update_stocks => :environment do
   puts "Updating stocks..."
   array = Array.new
   Stock.all.each do |stock|
