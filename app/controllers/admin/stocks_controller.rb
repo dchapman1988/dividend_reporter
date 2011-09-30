@@ -24,7 +24,7 @@ class Admin::StocksController < AdminController
       number_of_removed_stocks = pluralize(params[:selected].count, "stock")
       remove_multiple
       flash[:info] = "Removed #{number_of_removed_stocks}."
-      redirect_to admin_panel_path
+      redirect_to request.env["HTTP_REFERER"]
     else
       flash[:error] = "Select something first."
       redirect_to admin_panel_path
@@ -59,9 +59,14 @@ class Admin::StocksController < AdminController
     redirect_to admin_panel_path
   end
 
-  protected
+protected
+
   def remove_multiple
-    Stock.destroy_all(["stocks.id IN (?)", params[:selected].keys] ) if params[:selected].any?
+    if params[:selected].any?
+      params[:selected].keys.each do |id|
+        Stock.find(id.to_i).destroy
+      end
+    end
   end
 
   def process_updates

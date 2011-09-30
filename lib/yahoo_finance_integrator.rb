@@ -23,10 +23,11 @@ class YahooFinanceIntegrator
       symbol.inspect
       co_name = y_ext_hsh[symbol].name
       stock = Stock.find_or_create_by_symbol_and_company_name(symbol, co_name)
+      quote = Quote.find_or_create_by_stock_id(stock.id)
       puts stock.nil?
       stock.update_attributes( :company_name        => co_name,
                                :symbol              => y_ext_hsh[symbol].symbol )
-      Quote.create(            :ex_dividend_date    => y_ext_hsh[symbol].exDividendDate,
+      quote.update_attributes( :ex_dividend_date    => y_ext_hsh[symbol].exDividendDate,
                                :dividend_pay_date   => y_ext_hsh[symbol].dividendPayDate,
                                :dividend_yield      => y_ext_hsh[symbol].dividendYield,
                                :dividends_per_share => y_ext_hsh[symbol].dividendPerShare,

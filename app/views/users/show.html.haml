@@ -30,12 +30,12 @@
           %td
             = s.try(:symbol)
           %td
-            = s.quotes.last.try(:last_price)
+            = "$#{s.quotes.last.try(:last_price).round(2)}"
           %td
             = s.quotes.last.try(:ex_dividend_date)
           %td
             = s.quotes.last.try(:dividend_pay_date)
           %td
-            = s.quotes.last.try(:dividend_yield)
+            = "$#{s.quotes.last.try(:dividend_yield).round(2)}"
           %td.last
             = s.quotes.last.try(:dividends_per_share)

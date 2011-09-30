@@ -37,13 +37,13 @@
           %td
             = link_to s.try(:symbol), "http://www.google.com/finance?q=#{s.try(:symbol)}", :target => "_blank"
           %td
-            = s.quotes.last.try(:last_price)
+            = "$#{s.quotes.last.try(:last_price).round(2)}"
           %td
             = s.quotes.last.try(:ex_dividend_date)
           - if user_signed_in?
             %td
               = s.quotes.last.try(:dividend_pay_date)
             %td
-              = s.quotes.last.try(:dividend_yield)
+              = "$#{s.quotes.last.try(:dividend_yield).round(2)}"
             %td.last
               = s.quotes.last.try(:dividends_per_share)
